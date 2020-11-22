@@ -95,7 +95,7 @@ class WGraph_Algo_Test {
 
 		weighted_graph g1=g;
 		String str = "yuvaltry.txt";
-		algo.save(str);
+		assertTrue(algo.save(str));
 		algo.load(str);
 		assertEquals(g,g1);
 	}

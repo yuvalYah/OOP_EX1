@@ -360,17 +360,20 @@ public class WGraph_Algo implements weighted_graph_algorithms , Serializable {
 	@Override
 	public boolean save(String file) {
 		boolean ans = false;
-		ObjectOutputStream objout;
+		ObjectOutputStream graph;
 		try {
-			FileOutputStream fileout = new FileOutputStream(file, true);
-			objout = new ObjectOutputStream(fileout);
-			objout.writeObject(this);
-			objout.close();
+			FileOutputStream filenew = new FileOutputStream(file, true);
+			graph = new ObjectOutputStream(filenew);
+			graph.writeObject(this);
+			graph.close();
 			ans= true;
 		}
 		catch (FileNotFoundException e) {
-			e.printStackTrace(); }
-		catch (IOException e) {e.printStackTrace();}
+			e.printStackTrace(); 
+			}
+		catch (IOException e) {
+			e.printStackTrace();
+			}
 		return ans;
 	}
 
